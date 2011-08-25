@@ -1,0 +1,56 @@
+[alias]
+	co = commit
+	st = status
+	br = branch
+	ch = checkout
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+
+[difftool "changes"]
+	cmd = chdiff $LOCAL $REMOTE
+
+[difftool]
+	prompt = false
+
+[difftool "diffmerge"]
+	cmd = diffmerge.sh $LOCAL $REMOTE
+
+[diff]
+#	tool = opendiffsh
+#	tool = Kaleidoscope
+#	tool = p4merge
+#	tool = araxis
+#	tool = kdiff
+#	tool = changes
+	tool = diffmerge
+# From https://gist.github.com/160202
+[mergetool "diffmerge"]
+	cmd = diffmerge.sh --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE" --title1="Mine" --title2="Merged" --title3="Theirs"
+
+[merge]
+	tool = diffmerge
+[user]
+	name = Jason Terhune
+	email = terhune.j@gmail.com
