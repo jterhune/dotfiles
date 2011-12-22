@@ -1,7 +1,6 @@
 export CLICOLOR=1
 export GRAILS_HOME=/opt/grails
 export GROOVY_HOME=/opt/groovy
-export JBOSS_HOME=/opt/jboss
 export M2_HOME=/opt/maven
 export PATH=$GRAILS_HOME/bin:$M2_HOME/bin:$PATH
 # Java -------------------------------------------------------------
